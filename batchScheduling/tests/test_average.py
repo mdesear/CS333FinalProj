@@ -1,4 +1,4 @@
-from batchSchedulingComparison import average
+from batchScheduling.src import average
 import unittest
 
 class TestAverage(unittest.TestCase):

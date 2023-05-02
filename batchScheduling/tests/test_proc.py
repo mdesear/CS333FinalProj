@@ -1,4 +1,4 @@
-from batchSchedulingComparison import proc
+from batchScheduling.src import proc
 import unittest
 
 class TestProc(unittest.TestCase):
