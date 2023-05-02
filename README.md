@@ -1,5 +1,3 @@
-# Example Package
+# batchSchedulingComparison
 
-This is a simple example package. You can use
-[Github-flavored Markdown](https://guides.github.com/features/mastering-markdown/)
-to write your content.
+A small application that takes a .txt file as input containing process information and calculates process execution, average arrival, and average completion time based on an inputted scheduling algorithm (FCFS, Shortest Job First, or Priority Sort)
