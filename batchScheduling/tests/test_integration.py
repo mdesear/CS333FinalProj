@@ -24,7 +24,7 @@ class TestIntegration(unittest.TestCase):
                     self.assertEqual(int(test_procs[i].priority), int(
                          test_procResults[i].priority))
                     self.assertEqual(int(test_bursts[i]), int(test_burstResults[i]))
-                    self.assertEqual(int(test_arrivals[i]), int(test_arrivalResults))
+                    self.assertEqual(int(test_arrivals[i]), int(test_arrivalResults[i]))
 
     @patch("builtins.print")
     def test_fcfs(self, mock_print):
