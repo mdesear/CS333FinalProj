@@ -40,41 +40,40 @@ def fileScan(batchFile):
 
 def sortingAlgorithm(sortType, processes, arrivals, bursts):
     completeTimes = []
-    match sortType:
-        case 'FCFS':
-            completeTimes, FCFSpids = sort.FirstComeFirstServedSort(processes)
-            avgTurnaround, taTimes = average.AverageTurnaround(completeTimes, arrivals)
-            avgWait = average.AverageWait(taTimes, bursts)
-            print ('\nPID ORDER OF EXECUTION\n')
-            for i in range(0, len(FCFSpids)):
-                print (str(FCFSpids[i]) + '\n')
-            print ('Average Process Turnaround Time: ' + '%.2f' % avgTurnaround + '\n')
-            print ('Average Process Wait Time: ' + '%.2f' % avgWait + '\n') 
+    if sortType == 'FCFS':
+        completeTimes, FCFSpids = sort.FirstComeFirstServedSort(processes)
+        avgTurnaround, taTimes = average.AverageTurnaround(completeTimes, arrivals)
+        avgWait = average.AverageWait(taTimes, bursts)
+        print ('\nPID ORDER OF EXECUTION\n')
+        for i in range(0, len(FCFSpids)):
+            print (str(FCFSpids[i]) + '\n')
+        print ('Average Process Turnaround Time: ' + '%.2f' % avgTurnaround + '\n')
+        print ('Average Process Wait Time: ' + '%.2f' % avgWait + '\n') 
                     
-        case 'ShortestFirst':
-            completeTimes, SJFpids = sort.ShortestJobFirstSort(processes)
-            avgTurnaround, taTimes = average.AverageTurnaround(completeTimes, arrivals)
-            avgWait = average.AverageWait(taTimes, bursts)
-            print ('\nPID ORDER OF EXECUTION\n')
-            for i in range(0, len(SJFpids)):
-                print (str(SJFpids[i]) + '\n')
-            print ('Average Process Turnaround Time: ' + '%.2f' % avgTurnaround + '\n')
-            print ('Average Process Wait Time: ' + '%.2f' % avgWait + '\n')
+    elif sortType == 'ShortestFirst':
+        completeTimes, SJFpids = sort.ShortestJobFirstSort(processes)
+        avgTurnaround, taTimes = average.AverageTurnaround(completeTimes, arrivals)
+        avgWait = average.AverageWait(taTimes, bursts)
+        print ('\nPID ORDER OF EXECUTION\n')
+        for i in range(0, len(SJFpids)):
+            print (str(SJFpids[i]) + '\n')
+        print ('Average Process Turnaround Time: ' + '%.2f' % avgTurnaround + '\n')
+        print ('Average Process Wait Time: ' + '%.2f' % avgWait + '\n')
                     
-        case 'Priority':
-            completeTimes, priorityPids = sort.PrioritySort(processes)
-            avgTurnaround, taTimes = average.AverageTurnaround(completeTimes, arrivals)
-            avgWait = average.AverageWait(taTimes, bursts)
-            print ('\nPID ORDER OF EXECUTION\n')
-            for i in range(0, len(priorityPids)):
-                print(str(priorityPids[i]) + '\n')
-            print ('Average Processes Turnaround Time: ' 
-                   + '%.2f' % avgTurnaround + '\n')
-            print ('Average Processes Wait Time: ' + '%.2f' % avgWait + '\n')
+    elif sortType == 'Priority':
+        completeTimes, priorityPids = sort.PrioritySort(processes)
+        avgTurnaround, taTimes = average.AverageTurnaround(completeTimes, arrivals)
+        avgWait = average.AverageWait(taTimes, bursts)
+        print ('\nPID ORDER OF EXECUTION\n')
+        for i in range(0, len(priorityPids)):
+            print(str(priorityPids[i]) + '\n')
+        print ('Average Processes Turnaround Time: ' 
+                + '%.2f' % avgTurnaround + '\n')
+        print ('Average Processes Wait Time: ' + '%.2f' % avgWait + '\n')
 
-        case _:
-            print ('Invalid process scheduling algorithm entered. ' +
-                      'Valid options are FCFS, ShortestFirst, or Priority.')
+    else:
+        print ('Invalid process scheduling algorithm entered. ' +
+                    'Valid options are FCFS, ShortestFirst, or Priority.')
 
 if __name__ == "__main__":
     main()
