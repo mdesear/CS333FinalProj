@@ -1,5 +1,5 @@
 import sys
-from src import sort, average, proc
+from batchScheduling.src import sort, average, proc
 
 def main():
     batchfileName = ''
