@@ -31,9 +31,9 @@ jobs:
           ruff --format=github --target-version=py37 .
       - name: Test with unittest
         run: |
-          coverage run -m unittest tests/test_average
-          coverage run -m unittest tests/test_integration
-          coverage run -m unittest tests/test_proc
+          coverage run -m unittest tests\test_average
+          coverage run -m unittest tests\test_integration
+          coverage run -m unittest tests\test_proc
           coverage report -m
           
   deploy:
