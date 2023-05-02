@@ -5,7 +5,7 @@ def main():
 	sortType = ''
 	
 	if len(sys.argv) != 3:
-		print ('Usage: main.py <batchfileName> <sortType>')
+		print ('Usage: batchSchedulingComparison.py <batchfileName> <sortType>')
 	else:
 		try:
 			batchfileName = sys.argv[1] 
