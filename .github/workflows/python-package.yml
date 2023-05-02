@@ -18,8 +18,9 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install dependencies
         run: |
+          cd $GITHUB_WORKSPACE
           python -m pip install --upgrade pip
-          pip install ruff coverage nose
+          pip install ruff coverage
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Lint with ruff
         run: |
@@ -29,7 +30,7 @@ jobs:
           ruff --format=github --target-version=py37 .
       - name: Test with unittest
         run: |
-          nosetests --with-coverage
+          coverage run -m unittest discover && coverage report
           
   deploy:
     runs-on: ubuntu-latest
