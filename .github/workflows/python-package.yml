@@ -20,7 +20,6 @@ jobs:
         run: |
           cd $GITHUB_WORKSPACE
           cd batchScheduling
-          cd tests
           python -m pip install --upgrade pip
           pip install ruff coverage
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
@@ -32,7 +31,9 @@ jobs:
           ruff --format=github --target-version=py37 .
       - name: Test with unittest
         run: |
-          coverage run -m unittest discover
+          coverage run -m unittest tests/test_average
+          coverage run -m unittest tests/test_integration
+          coverage run -m unittest tests/test_proc
           coverage report -m
           
   deploy:
