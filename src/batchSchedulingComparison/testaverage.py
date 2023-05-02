@@ -1,4 +1,5 @@
-import average, unittest
+import average
+import unittest
 
 class TestAverage(unittest.TestCase):
     def test_avgTurnaround(self):
@@ -12,7 +13,8 @@ class TestAverage(unittest.TestCase):
 
         test_avgTurnaround = sum(test_turnaroundTimes) / len(test_completionTimes)    
 
-        test_avgResult, test_timesResult = average.AverageTurnaround(test_completionTimes, test_arrivalTimes)
+        test_avgResult, test_timesResult = average.AverageTurnaround(
+                            test_completionTimes, test_arrivalTimes)
 
         self.assertEqual(test_avgTurnaround, test_avgResult)
         self.assertEqual(test_turnaroundTimes, test_timesResult)

@@ -1,4 +1,5 @@
-import proc, unittest
+import proc
+import unittest
 
 class TestProc(unittest.TestCase):
     def test_pid(self):
