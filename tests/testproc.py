@@ -1,4 +1,4 @@
-from src.batchSchedulingComparison import proc
+import src.batchSchedulingComparison.proc as proc
 import unittest
 
 class TestProc(unittest.TestCase):
