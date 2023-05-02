@@ -1,7 +1,5 @@
 import sys
-import proc
-import sort
-import average
+from src import sort, average, proc
 
 def main():
     batchfileName = ''
