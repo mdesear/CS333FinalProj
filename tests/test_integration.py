@@ -1,7 +1,5 @@
 import batchSchedulingComparison
-import proc
-import average
-import sort
+from batchSchedulingComparison import average, proc, sort
 import unittest
 from unittest.mock import patch, mock_open, call
 
